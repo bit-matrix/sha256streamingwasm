@@ -7,20 +7,21 @@
 
 #include "Bytestring.hpp"
 
-
-
-ByteString::ByteString(std::string in){
+ByteString::ByteString(std::string in)
+{
     setString = in;
 }
 
-std::string ByteString::fromHexString(){
-    
+std::string ByteString::fromHexString()
+{
+
     std::stringstream ss;
 
-    for (int i=0; i < setString.size()/2; i++) {
+    for (int i = 0; i < setString.size() / 2; i++)
+    {
 
         std::stringstream icat;
-        icat << setString[i*2] << setString[i*2+1];
+        icat << setString[i * 2] << setString[i * 2 + 1];
 
         std::string icatstr = icat.str();
 

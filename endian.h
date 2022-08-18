@@ -10,7 +10,6 @@
 //#endif
 
 #include "byteswap.h"
-
 #include <stdint.h>
 
 #if defined(HAVE_ENDIAN_H)
@@ -237,4 +236,3 @@ inline uint64_t le64toh(uint64_t little_endian_64bits)
 #endif // HAVE_DECL_LE64TOH
 
 #endif // WORDS_BIGENDIAN
-

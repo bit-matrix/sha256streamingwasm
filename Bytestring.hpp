@@ -12,9 +12,11 @@
 #include <string>
 #include <sstream>
 
-class ByteString{
+class ByteString
+{
 private:
     std::string setString;
+
 public:
     ByteString(std::string);
     std::string fromHexString();
