@@ -58,7 +58,7 @@ INCS_Debug := \
 	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/uv/include \
 	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/zlib \
 	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/v8/include \
-	-I/Users/afarukcali/Desktop/projects/converter/node_modules/node-addon-api
+	-I/Users/afarukcali/Desktop/bitmatrix/sha256streamingwasm/node_modules/node-addon-api
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=hex-resolver' \
@@ -113,7 +113,7 @@ INCS_Release := \
 	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/uv/include \
 	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/zlib \
 	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/v8/include \
-	-I/Users/afarukcali/Desktop/projects/converter/node_modules/node-addon-api
+	-I/Users/afarukcali/Desktop/bitmatrix/sha256streamingwasm/node_modules/node-addon-api
 
 OBJS := \
 	$(obj).target/$(TARGET)/Bytestring.o \
