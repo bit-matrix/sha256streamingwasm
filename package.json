@@ -1,10 +1,9 @@
 {
   "name": "@bitmatrix/sha256streaming",
-  "version": "1.0.13",
+  "version": "1.0.19",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx webpack --mode production --config webpack.config.js",
     "publish": "npm publish --access public"
   },
   "author": "",
@@ -13,13 +12,7 @@
     "node-addon-api": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.10",
-    "babel-loader": "^8.2.5",
-    "node-gyp": "^9.1.0",
-    "node-loader": "^2.0.0",
-    "node-polyfill-webpack-plugin": "^2.0.1",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "node-gyp": "^9.1.0"
   },
   "gypfile": "true"
 }
