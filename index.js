@@ -1,6 +1,3 @@
-const { dlopen } = require("node:process");
-const { join } = require("node:path");
+const Sha256Stream = require("./build/Release/hex-resolver");
 
-dlopen(module, join("./build/Release/hex-resolver.node"));
-
-module.exports;
+module.exports = Sha256Stream;
