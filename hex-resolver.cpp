@@ -5,11 +5,14 @@
 //  Created by Burak on 16.08.2022.
 //
 
+#include <napi.h>
 #include <iostream>
 #include "sha256.h"
 #include <sstream>
 #include "Bytestring.hpp"
-#include <napi.h>
+
+
+using namespace Napi;
 
 std::string sha256Finalize(std::string in1, std::string in2)
 {
@@ -113,7 +116,6 @@ std::string sha256Initialize(std::string in)
     return string;
 }
 
-using namespace Napi;
 
 String Sha256Finalize(const CallbackInfo &info)
 {
