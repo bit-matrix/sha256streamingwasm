@@ -51,14 +51,14 @@ CFLAGS_OBJC_Debug :=
 CFLAGS_OBJCC_Debug :=
 
 INCS_Debug := \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/include/node \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/src \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/deps/openssl/config \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/deps/openssl/openssl/include \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/deps/uv/include \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/deps/zlib \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/deps/v8/include \
-	-I/Users/reyhanboydag/Desktop/sha256streamingwasm/node_modules/node-addon-api
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/include/node \
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/src \
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/openssl/config \
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/openssl/openssl/include \
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/uv/include \
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/zlib \
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/v8/include \
+	-I/Users/afarukcali/Desktop/bitmatrix/sha256streamingwasm/node_modules/node-addon-api
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=hex-resolver' \
@@ -106,14 +106,14 @@ CFLAGS_OBJC_Release :=
 CFLAGS_OBJCC_Release :=
 
 INCS_Release := \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/include/node \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/src \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/deps/openssl/config \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/deps/openssl/openssl/include \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/deps/uv/include \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/deps/zlib \
-	-I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/deps/v8/include \
-	-I/Users/reyhanboydag/Desktop/sha256streamingwasm/node_modules/node-addon-api
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/include/node \
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/src \
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/openssl/config \
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/openssl/openssl/include \
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/uv/include \
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/zlib \
+	-I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/deps/v8/include \
+	-I/Users/afarukcali/Desktop/bitmatrix/sha256streamingwasm/node_modules/node-addon-api
 
 OBJS := \
 	$(obj).target/$(TARGET)/Bytestring.o \
