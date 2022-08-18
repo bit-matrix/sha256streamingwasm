@@ -1,4 +1,4 @@
-const path = require("path");
+const os = require("os");
 
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
@@ -31,6 +31,9 @@ module.exports = (env) => {
         {
           test: /\.node$/,
           loader: "node-loader",
+          options: {
+            flags: os.constants.dlopen.RTLD_NOW,
+          },
         },
       ],
     },
