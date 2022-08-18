@@ -25,15 +25,22 @@ DEFS_Debug := \
 CFLAGS_Debug := \
 	-O0 \
 	-gdwarf-2 \
-	-mmacosx-version-min=10.13 \
+	-mmacosx-version-min=10.7 \
 	-arch arm64 \
 	-Wall \
 	-Wendif-labels \
 	-W \
-	-Wno-unused-parameter
+	-Wno-unused-parameter \
+	-pedantic \
+	-Wcast-align \
+	-Wno-implicit-fallthrough \
+	-Wno-long-long \
+	-Wno-overlength-strings \
+	-Wshadow
 
 # Flags passed to only C files.
 CFLAGS_C_Debug := \
+	-std=c89 \
 	-fno-strict-aliasing
 
 # Flags passed to only C++ files.
@@ -80,15 +87,22 @@ DEFS_Release := \
 CFLAGS_Release := \
 	-O3 \
 	-gdwarf-2 \
-	-mmacosx-version-min=10.13 \
+	-mmacosx-version-min=10.7 \
 	-arch arm64 \
 	-Wall \
 	-Wendif-labels \
 	-W \
-	-Wno-unused-parameter
+	-Wno-unused-parameter \
+	-pedantic \
+	-Wcast-align \
+	-Wno-implicit-fallthrough \
+	-Wno-long-long \
+	-Wno-overlength-strings \
+	-Wshadow
 
 # Flags passed to only C files.
 CFLAGS_C_Release := \
+	-std=c89 \
 	-fno-strict-aliasing
 
 # Flags passed to only C++ files.
@@ -152,7 +166,7 @@ $(obj).$(TOOLSET)/$(TARGET)/%.o: $(obj)/%.cpp FORCE_DO_CMD
 LDFLAGS_Debug := \
 	-undefined dynamic_lookup \
 	-Wl,-search_paths_first \
-	-mmacosx-version-min=10.13 \
+	-mmacosx-version-min=10.7 \
 	-arch arm64 \
 	-L$(builddir) \
 	-stdlib=libc++
@@ -164,7 +178,7 @@ LIBTOOLFLAGS_Debug := \
 LDFLAGS_Release := \
 	-undefined dynamic_lookup \
 	-Wl,-search_paths_first \
-	-mmacosx-version-min=10.13 \
+	-mmacosx-version-min=10.7 \
 	-arch arm64 \
 	-L$(builddir) \
 	-stdlib=libc++
