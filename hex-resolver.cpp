@@ -11,7 +11,6 @@
 #include <sstream>
 #include "Bytestring.hpp"
 
-
 using namespace Napi;
 
 std::string sha256Finalize(std::string in1, std::string in2)
