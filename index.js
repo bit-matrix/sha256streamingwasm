@@ -1,3 +1,3 @@
-const sha256context = require("./build/Release/hex-resolver").Resolver;
+const Sha256Stream = require("./build/Release/hex-resolver");
 
-module.exports = { sha256context };
+module.exports = { Sha256Stream };
