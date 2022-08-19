@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "mappings": "0BAAA,MAAMA,EAAeC,EAAQ,KAE7BC,EAAOC,QAAUH,C,2BCDjB,IACEI,QAAQC,OAAOH,EAAQI,UAAY,UAAsB,IAA0B,wCAAyC,EAG9H,CAFE,MAAOC,GACP,MAAM,IAAIC,MAAM,iBAAmBD,EACrC,C,sBCLAL,EAAOC,QAAUF,QAAQ,O,GCCrBQ,EAA2B,CAAC,EAGhC,SAASC,EAAoBC,GAE5B,IAAIC,EAAeH,EAAyBE,GAC5C,QAAqBE,IAAjBD,EACH,OAAOA,EAAaT,QAGrB,IAAID,EAASO,EAAyBE,GAAY,CACjDG,GAAIH,EACJI,QAAQ,EACRZ,QAAS,CAAC,GAUX,OANAa,EAAoBL,GAAUT,EAAQA,EAAOC,QAASO,GAGtDR,EAAOa,QAAS,EAGTb,EAAOC,OACf,CCzBAO,EAAoBO,IAAOf,IAC1BA,EAAOgB,MAAQ,GACVhB,EAAOiB,WAAUjB,EAAOiB,SAAW,IACjCjB,GCHRQ,EAAoBU,EAAI,GCGxB,IAAIC,EAAsBX,EAAoB,I",
+  "sources": [
+    "webpack://@bitmatrix/sha256streaming/./index.js",
+    "webpack://@bitmatrix/sha256streaming/./build/Release/hex-resolver.node",
+    "webpack://@bitmatrix/sha256streaming/external node-commonjs \"path\"",
+    "webpack://@bitmatrix/sha256streaming/webpack/bootstrap",
+    "webpack://@bitmatrix/sha256streaming/webpack/runtime/node module decorator",
+    "webpack://@bitmatrix/sha256streaming/webpack/runtime/publicPath",
+    "webpack://@bitmatrix/sha256streaming/webpack/startup"
+  ],
+  "sourcesContent": [
+    "const Sha256Stream = require(\"./build/Release/hex-resolver.node\");\n\nmodule.exports = Sha256Stream;\n",
+    "\ntry {\n  process.dlopen(module, __dirname + require(\"path\").sep + __webpack_public_path__ + \"hex-resolver.node\", 2);\n} catch (error) {\n  throw new Error('node-loader:\\n' + error);\n}\n",
+    "module.exports = require(\"path\");",
+    "// The module cache\nvar __webpack_module_cache__ = {};\n\n// The require function\nfunction __webpack_require__(moduleId) {\n\t// Check if module is in cache\n\tvar cachedModule = __webpack_module_cache__[moduleId];\n\tif (cachedModule !== undefined) {\n\t\treturn cachedModule.exports;\n\t}\n\t// Create a new module (and put it into the cache)\n\tvar module = __webpack_module_cache__[moduleId] = {\n\t\tid: moduleId,\n\t\tloaded: false,\n\t\texports: {}\n\t};\n\n\t// Execute the module function\n\t__webpack_modules__[moduleId](module, module.exports, __webpack_require__);\n\n\t// Flag the module as loaded\n\tmodule.loaded = true;\n\n\t// Return the exports of the module\n\treturn module.exports;\n}\n\n",
+    "__webpack_require__.nmd = (module) => {\n\tmodule.paths = [];\n\tif (!module.children) module.children = [];\n\treturn module;\n};",
+    "__webpack_require__.p = \"\";",
+    "// startup\n// Load entry module and return exports\n// This entry module is referenced by other modules so it can't be inlined\nvar __webpack_exports__ = __webpack_require__(45);\n"
+  ],
+  "names": [
+    "Sha256Stream",
+    "require",
+    "module",
+    "exports",
+    "process",
+    "dlopen",
+    "__dirname",
+    "error",
+    "Error",
+    "__webpack_module_cache__",
+    "__webpack_require__",
+    "moduleId",
+    "cachedModule",
+    "undefined",
+    "id",
+    "loaded",
+    "__webpack_modules__",
+    "nmd",
+    "paths",
+    "children",
+    "p",
+    "__webpack_exports__"
+  ],
+  "sourceRoot": ""
+}
