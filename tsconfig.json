@@ -8,7 +8,10 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "types": ["node"],
-    "module": "commonjs"
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "moduleResolution": "node"
   },
-  "exclude": ["node_modules", "dist", "src/tests", "src/**/*.spec.ts", "docs"]
+  "include": ["**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
