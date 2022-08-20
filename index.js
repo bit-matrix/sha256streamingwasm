@@ -1,3 +1,2 @@
-const Sha256Stream = require("./build/Release/hex-resolver.node");
-
-module.exports = Sha256Stream;
+exports.mod = require("./mod");
+exports.version = "1.0.27";

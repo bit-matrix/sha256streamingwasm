@@ -1,0 +1,1 @@
+cmd_Release/sha256Streaming.node := c++ -bundle -undefined dynamic_lookup -Wl,-search_paths_first -mmacosx-version-min=10.13 -arch arm64 -L./Release -stdlib=libc++  -o Release/sha256Streaming.node Release/obj.target/sha256Streaming/src/Bytestring.o Release/obj.target/sha256Streaming/src/sha256Streaming.o Release/obj.target/sha256Streaming/src/sha256.o 

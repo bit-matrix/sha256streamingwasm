@@ -1,6 +1,6 @@
 {
   "name": "@bitmatrix/sha256streaming",
-  "version": "1.0.26",
+  "version": "1.0.28",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-addon-api": "^5.0.0"
+    "loady": "^0.0.5"
   },
-  "devDependencies": {
-    "node-gyp": "^9.1.0"
+  "browser": {
+    "./index": "./index.js"
   },
   "gypfile": "true"
 }
