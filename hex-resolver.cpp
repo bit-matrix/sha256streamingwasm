@@ -10,6 +10,8 @@
 #include "sha256.h"
 #include <sstream>
 #include "Bytestring.hpp"
+#include <vector>
+#include "endian.h"
 
 using namespace Napi;
 
@@ -115,6 +117,49 @@ std::string sha256Initialize(std::string in)
     return string;
 }
 
+int deterministicrandom(int intMax, int intMin, std::string entropy){
+    
+    ByteString bs(entropy);
+    std::string s1 = bs.fromHexString();
+    
+    std::vector<unsigned char> t1;
+    t1.insert(t1.begin(), s1.begin(), s1.end());
+    
+
+    uint64_t nMax = (intMax - intMin);
+    uint64_t nRange = (std::numeric_limits<uint64_t>::max() / nMax) * nMax;
+    uint64_t nRand;
+    
+    
+    std::vector<unsigned char> vchHash(32, 0);
+    uint64_t nCounter = 0;
+    int nHashIndex = 3;
+    
+    CSHA256 hasher;
+    hasher.Write(t1.data(), t1.size());
+    
+    do {
+        if (nHashIndex >= 3) {
+            uint64_t le_counter = htole64(nCounter);
+            CSHA256(hasher).Write((const unsigned char*)&le_counter, sizeof(nCounter)).Finalize(vchHash.data());
+                nHashIndex = 0;
+                nCounter++;
+        }
+
+            nRand = 0;
+        for (size_t i=0; i<8; ++i)
+                nRand |= ((uint64_t)vchHash[(nHashIndex*8) + i]) << (8*i);
+
+                nHashIndex++;
+        } while (nRand > nRange);
+    
+    int result(nRand % nMax);
+    result += intMin;
+    
+    
+    
+    return result;
+}
 
 String Sha256Finalize(const CallbackInfo &info)
 {
@@ -145,11 +190,24 @@ String Sha256Initialize(const CallbackInfo &info)
     return returnValue;
 }
 
+Number DeterministicRandom(const CallbackInfo &info)
+{
+    Env env = info.Env();
+    int intMax = info[0].As<Number>().Uint32Value();
+    int intMin = info[1].As<Number>().Uint32Value();
+    std::string entropy = info[2].As<String>().Utf8Value();
+    Number returnValue = Number::New(env, deterministicrandom(intMax,intMin,entropy));
+
+    return returnValue;
+}
+
 Object InitAll(Env env, Object exports)
 {
     exports.Set("sha256Finalizer", Function::New(env, Sha256Finalize));
     exports.Set("sha256Updater", Function::New(env, Sha256Update));
     exports.Set("sha256Initializer", Function::New(env, Sha256Initialize));
+    exports.Set("deterministicrandom", Function::New(env, DeterministicRandom));
+
     return exports;
 }
 

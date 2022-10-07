@@ -161,6 +161,9 @@ quiet_cmd_copy = COPY $@
 # send stderr to /dev/null to ignore messages when linking directories.
 cmd_copy = ln -f "$<" "$@" 2>/dev/null || (rm -rf "$@" && cp -af "$<" "$@")
 
+quiet_cmd_symlink = SYMLINK $@
+cmd_symlink = ln -sf "$<" "$@"
+
 quiet_cmd_alink = LIBTOOL-STATIC $@
 cmd_alink = rm -f $@ && ./gyp-mac-tool filter-libtool libtool $(GYP_LIBTOOLFLAGS) -static -o $@ $(filter %.o,$^)
 
@@ -331,8 +334,8 @@ ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
 endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
-cmd_regen_makefile = cd $(srcdir); /Users/afarukcali/Desktop/bitmatrix/sha256streamingwasm/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/Users/afarukcali/Library/Caches/node-gyp/16.15.0" "-Dnode_gyp_dir=/Users/afarukcali/Desktop/bitmatrix/sha256streamingwasm/node_modules/node-gyp" "-Dnode_lib_file=/Users/afarukcali/Library/Caches/node-gyp/16.15.0/<(target_arch)/node.lib" "-Dmodule_root_dir=/Users/afarukcali/Desktop/bitmatrix/sha256streamingwasm" "-Dnode_engine=v8" "--depth=." "-Goutput_dir=." "--generator-output=build" -I/Users/afarukcali/Desktop/bitmatrix/sha256streamingwasm/build/config.gypi -I/Users/afarukcali/Desktop/bitmatrix/sha256streamingwasm/node_modules/node-gyp/addon.gypi -I/Users/afarukcali/Library/Caches/node-gyp/16.15.0/include/node/common.gypi "--toplevel-dir=." binding.gyp
-Makefile: $(srcdir)/build/config.gypi $(srcdir)/node_modules/node-gyp/addon.gypi $(srcdir)/../../../Library/Caches/node-gyp/16.15.0/include/node/common.gypi $(srcdir)/binding.gyp $(srcdir)/node_modules/node-addon-api/node_api.gyp
+cmd_regen_makefile = cd $(srcdir); /Users/reyhanboydag/Desktop/sha256streamingwasm/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0" "-Dnode_gyp_dir=/Users/reyhanboydag/Desktop/sha256streamingwasm/node_modules/node-gyp" "-Dnode_lib_file=/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/<(target_arch)/node.lib" "-Dmodule_root_dir=/Users/reyhanboydag/Desktop/sha256streamingwasm" "-Dnode_engine=v8" "--depth=." "-Goutput_dir=." "--generator-output=build" -I/Users/reyhanboydag/Desktop/sha256streamingwasm/build/config.gypi -I/Users/reyhanboydag/Desktop/sha256streamingwasm/node_modules/node-gyp/addon.gypi -I/Users/reyhanboydag/Library/Caches/node-gyp/16.14.0/include/node/common.gypi "--toplevel-dir=." binding.gyp
+Makefile: $(srcdir)/build/config.gypi $(srcdir)/binding.gyp $(srcdir)/../../Library/Caches/node-gyp/16.14.0/include/node/common.gypi $(srcdir)/node_modules/node-gyp/addon.gypi $(srcdir)/node_modules/node-addon-api/node_api.gyp
 	$(call do_cmd,regen_makefile)
 
 # "all" is a concatenation of the "all" targets from all the included
